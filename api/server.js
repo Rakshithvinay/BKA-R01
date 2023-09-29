@@ -7,20 +7,10 @@ import hotelsRoute from "./routes/hotels.js";
 import roomsRoute from "./routes/rooms.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
-import path from "path"
-
-
-
-
-
-
 
 const app = express()
 dotenv.config()
-
 const connect = async () => {
-
-
 try {
   await mongoose.connect(process.env.MONGO);
   console.log("Connected to mongoDB.")
@@ -31,9 +21,6 @@ try {
 mongoose.connection.on("disconnected", () => {
   console.log("mongoDB disconnected")
 })
-
-
-
 app.use(cors())
 app.use(cookieParser())
 app.use(express.json());
@@ -56,14 +43,7 @@ app.use((err, req, res, next) => {
 });
 
 
-app.use(express.static(path.join( './admin/build')))
-app.get('*', function(req,res){
- res.sendFile(path.join('./admin/build/indes.html'))
-})
-app.use(express.static(path.join('./user/build')))
-app.get('*', function(req,res){
- res.sendFile(path.join('./user/build/indes.html'))
-})
+
 
 
 
