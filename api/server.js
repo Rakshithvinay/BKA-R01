@@ -13,6 +13,7 @@ import cors from "cors";
 
 
 
+
 const app = express()
 dotenv.config()
 
@@ -52,6 +53,10 @@ app.use((err, req, res, next) => {
     stack: err.stack,
   });
 });
+
+
+
+app.use('/', express.static('./user/build'))
 
 
 const port = process.env.PORT || 8800;
