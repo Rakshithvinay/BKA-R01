@@ -7,7 +7,7 @@ import hotelsRoute from "./routes/hotels.js";
 import roomsRoute from "./routes/rooms.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
-import path from "path"
+
 
 
 
@@ -41,14 +41,7 @@ app.use("/api/users", usersRoute);
 app.use("/api/hotels", hotelsRoute);
  app.use("/api/rooms", roomsRoute);
 
- app.use(express.static(path.join( './admin/build')))
- app.get('*', function(req,res){
-  res.sendFile(path.join('./admin/build/indes.html'))
- })
- app.use(express.static(path.join('./user/build')))
- app.get('*', function(req,res){
-  res.sendFile(path.join('./user/build/indes.html'))
- })
+
 app.use((err, req, res, next) => {
   const errorStatus = err.status || 500;
   const errorMessage = err.message || "Something went wrong!";
