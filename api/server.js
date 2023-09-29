@@ -7,6 +7,8 @@ import hotelsRoute from "./routes/hotels.js";
 import roomsRoute from "./routes/rooms.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import path from "path"
+
 
 const app = express()
 dotenv.config()
@@ -43,6 +45,10 @@ app.use((err, req, res, next) => {
 });
 
 
+app.use(express.static(path.join( './admin/build')))
+app.get('*', function(req,res){
+ res.sendFile(path.join('./admin/build/index.html'))
+})
 
 
 
