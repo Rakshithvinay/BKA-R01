@@ -11,8 +11,6 @@ import cors from "cors";
 
 
 
-
-
 const app = express()
 dotenv.config()
 
@@ -35,7 +33,6 @@ mongoose.connection.on("disconnected", () => {
 app.use(cors())
 app.use(cookieParser())
 app.use(express.json());
-
 
 app.use("/api/auth", authRoute);
 app.use("/api/users", usersRoute);

@@ -9,10 +9,6 @@
     "start": "node server.js",
     "serv" : "nodemon server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Rakshithvinay/BKA-R01.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
