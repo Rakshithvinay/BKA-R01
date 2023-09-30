@@ -6,8 +6,7 @@
   "type": "module",
   "scripts": {
     "test" : "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently \"npm run start --prefix user\" \"npm run start --prefix api\"",
-    "build": "concurrently \"npm run start --prefix user\" \"npm run start --prefix api\"",
+    "start": "node server.js",
     "serv" : "nodemon server.js"
   },
   "repository": {
