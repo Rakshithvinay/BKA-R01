@@ -1,12 +1,13 @@
 import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import authRoute from "./routes/auth.js";
-import usersRoute from "./routes/users.js";
-import hotelsRoute from "./routes/hotels.js";
-import roomsRoute from "./routes/rooms.js";
+import authRoute from "./api/routes/auth.js";
+import usersRoute from "./api/routes/users.js";
+import hotelsRoute from "./api/routes/hotels.js";
+import roomsRoute from "./api/routes/rooms.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import path from "path";
 
 
 
@@ -34,8 +35,8 @@ app.use(cors())
 app.use(cookieParser())
 app.use(express.json());
 
-app.use("/", express.static("./admin/build"))
-app.use("/", express.static("./user/build"))
+app.use("/admin", express.static(path.join(__dirname, "admin/build")));
+app.use("/user", express.static(path.join(__dirname, "user/build")));
 
 app.use("/api/auth", authRoute);
 app.use("/api/users", usersRoute);
