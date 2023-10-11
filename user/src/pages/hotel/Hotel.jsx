@@ -25,7 +25,7 @@ const Hotel = () => {
   const [openModal, setOpenModal] = useState(false);
 
 
-  const { data, loading, error } = useFetch(`/hotels/find/${id}`);
+  const { data, loading, error } = useFetch(`https://bka-r01.onrender.com/api/hotels/find/${id}`);
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
   

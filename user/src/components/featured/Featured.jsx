@@ -2,7 +2,7 @@ import useFetch from "../../hooks/useFetch";
 import "./featured.css";
 
 const Featured = () => {
-  const { data, loading, error} = useFetch("/hotels/countByCity?cities=bengaluru,Mumbai,Hyd")
+  const { data, loading, error} = useFetch("https://bka-r01.onrender.com/api/hotels/countByCity?cities=bengaluru,Mumbai,Hyd")
 
   console.log(data)
   return (

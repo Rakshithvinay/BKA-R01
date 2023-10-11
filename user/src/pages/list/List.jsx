@@ -21,7 +21,7 @@ const List = () => {
 
   
   const { data, loading, error, reFetch } = useFetch(
-    `/hotels?city=${destination}&min=${min || 0 }&max=${max || 9999}`
+    `https://bka-r01.onrender.com/api/hotels?city=${destination}&min=${min || 0 }&max=${max || 9999}`
   );
   
   const handleClick = () => {
